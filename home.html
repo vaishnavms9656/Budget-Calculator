@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="home-body">
+    <header>
+        <nav data-mdb-navbar-init class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+            <div class="container-fluid">
+                <button data-mdb-collapse-init class="navbar-toggler" type="button"
+                    data-mdb-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="#">Pricing</a>
+                    </div>
+                </div>
+                <div id="nav_heading" class="text-danger fs-2 font-italic text-center mt-3 mx-4"></div>
+                <div class="clear-button text-center">
+                    <button type="button" class="btn btn-outline-danger" onclick="logout()">
+                 Logout
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container p-lg-5 px-md-2 py-md-5 p-1">
+        <div class="calculator-section mt-3 p-lg-5">
+            <h1 class="text-center">Budget Calculator</h1>
+            <div class="d-flex justify-content-around mt-5">
+                <form action="" id="money-form">
+                    <h3 class="mx-5 px-5">Add Income</h3>
+                    <select name="income_desc" id="income_desc" class="form-control form-control-lg m-3">
+                        <option value="">Choose a decription</option>
+                        <option value="salary">Salary</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" id="income_amt" class="form-control form-control-lg m-3"
+                        placeholder="Enter Amount" />
+                    <div class="button text-center">
+                        <button type="button" class="btn btn-outline-warning" onclick="addIncome()">
+                            Add Income
+                        </button>
+                    </div>
+                </form>
+                <form action="" id="expense-form">
+                    <h3 class="mx-5 px-5">Add Expense</h3>
+                    <select name="expense_desc" id="expense_desc" class="form-control form-control-lg m-3">
+                        <option value="">Choose a decription</option>
+                        <option value="food">Food</option>
+                        <option value="loan">Bank Loan</option>
+                        <option value="emi">Emi</option>
+                        <option value="room">Room Rent</option>
+                    </select>
+                    <input type="text" id="expense_amt" class="form-control form-control-lg m-3"
+                        placeholder="Enter Amount" />
+                    <div class="button text-center">
+                        <button type="button" class="btn btn-outline-warning" onclick="addExpense()">
+                            Add Expense
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="d-flex justify-content-center my-5">
+                <div id="balance_output">
+                </div>
+                <div id="spent_output">
+                </div>
+            </div>
+            <div class="clear-button text-center">
+                <button type="button" class="btn btn-outline-warning" onclick="clearAll()">
+                    Clear All
+            </div>
+            </button>
+            <hr>
+            <div class="details-section">
+                <h1 class="text-center mt-5">Income And Expense Details</h1>
+            </div>
+            <div class="d-flex justify-content-around mt-5">
+                <div class="income-table">
+                    <table class="table table-bordered table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Balance</th>
+                                <th scope="col">Date and Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="income_results">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="expense-table">
+                    <table class="table table-bordered table-dark">
+                        <thead>
+                            <tr>
+                                <th scope="col">Type</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Balance</th>
+                                <th scope="col">Date and Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="expense_results">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <script src="./index.js"></script>
+</body>
+
+</html>
